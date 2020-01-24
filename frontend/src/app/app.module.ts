@@ -22,6 +22,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AppLoadService } from './shared/services/app-load.service';
 import { SharedModule } from './shared/shared.module';
 import { TeamPresenseModule } from './team-presense/team-presense.module';
+import { OfficeModule } from './office/office.module';
 
 registerLocaleData(localeRu);
 moment.locale('ru');
@@ -46,6 +47,7 @@ export function onInit(appLoadService: AppLoadService) {
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    OfficeModule,
     RouterModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

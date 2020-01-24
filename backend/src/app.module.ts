@@ -7,6 +7,7 @@ import { SettingsModule } from './settings/settings.module';
 import { TasksModule } from './tasks/tasks.module';
 import { UsersModule } from './users/users.module';
 import { HolidaysModule } from './holidays/holidays.module';
+import { PlacesModule } from './places/places.module';
 const config = getConfig();
 
 const url = `${config.DATABASE_URL}`;
@@ -22,6 +23,7 @@ const url = `${config.DATABASE_URL}`;
     }),
     DictionaryModule,
     SettingsModule,
+    PlacesModule,
   ],
   providers: [{ provide: Config, useValue: config }],
 })

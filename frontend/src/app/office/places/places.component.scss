@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-1 {
+  //background-image: url("/assets/img/new-office.png");
+  height: 670px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  display: flex;
+}
+.plan-2 {
+  //background-image: url("/assets/img/new-office-2.png");
+  height: 670px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.place {
+  width: 60px;
+  height: 30px;
+  border: 2px solid darkseagreen;
+
+  &:hover {
+    border-color: #f05772;
+    cursor: pointer;
+  }
+}
+
+
+.place.placeOff {
+  background-color: #ef9a9a;
+}

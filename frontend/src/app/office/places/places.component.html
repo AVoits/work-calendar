@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h2>1 этаж</h2>
+  <div class="plan-1">
+    <div *ngFor="let place of placesFirst">
+      <div class="place"
+           [title]="getUserName(place, 'first')"
+           [ngClass]="{'placeOff': isPlaceOff(place, 'first')}"
+           (click)="takePlace(place, 'first')">{{place}}</div>
+    </div>
+  </div>
+</div>

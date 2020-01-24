@@ -1,6 +1,11 @@
 <nav class="nav">
   <a class="nav-item"
     *ngIf="(isAuth$ | async)"
+    routerLink="/office"
+    routerLinkActive="active">Новый офис
+  </a>
+  <a class="nav-item"
+    *ngIf="(isAuth$ | async)"
     routerLink="/presence"
     routerLinkActive="active">Мое присутствие
   </a>
