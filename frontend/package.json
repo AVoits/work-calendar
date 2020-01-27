@@ -36,6 +36,7 @@
     "lodash": "^4.17.11",
     "lvovich": "^1.0.15",
     "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
     "ngx-avatar": "^3.2.0",
     "papaparse": "^5.1.0",
     "rxjs": "^6.3.3",
