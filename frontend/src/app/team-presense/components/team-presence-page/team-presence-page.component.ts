@@ -4,7 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
 import { Moment } from 'moment';
 import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
-import { filter, map, share, switchMap } from 'rxjs/operators';
+import { filter, map} from 'rxjs/operators';
 import { DictionaryApiService } from '../../../core/services/dictionary-api.service';
 import { EmployeeStoreService } from '../../../core/store/employee-store.service';
 import { TasksStoreService } from '../../../core/store/tasks-store.service';

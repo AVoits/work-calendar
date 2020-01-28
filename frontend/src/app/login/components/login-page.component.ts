@@ -9,6 +9,7 @@ import { ContextStoreService } from '../../core/store/context-store.service';
 import { EmployeeStoreService } from '../../core/store/employee-store.service';
 import { Employee } from '../../shared/models/employee.model';
 import { AuthSetting } from '../../shared/models/auth-setting.model';
+import { CommonErrorModel } from '../../shared/models/common-error.model';
 
 @Component({
   selector: 'app-login-page',
@@ -16,7 +17,7 @@ import { AuthSetting } from '../../shared/models/auth-setting.model';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-  public errorMessage: string;
+  public errorMessage: CommonErrorModel;
   public loginForm: FormGroup;
   public settings$: Observable<AuthSetting>;
 
@@ -56,7 +57,7 @@ export class LoginPageComponent implements OnInit {
     this.contextStoreService.setCurrentUser(res);
   }
 
-  private erroredLogin(err: { error: string }): void {
+  private erroredLogin(err): void {
     this.errorMessage = err.error;
   }
 

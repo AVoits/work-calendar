@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpStatus, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, NotAcceptableException, Post, Req, Res } from '@nestjs/common';
 import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { Config } from '../config/config';
@@ -24,7 +24,7 @@ export class AuthController {
       user.hashPassword = `Bearer ${this.authService.getJWTbyUser(user)}`;
       res.status(HttpStatus.OK).send(user);
     } catch (e) {
-      res.status(HttpStatus.NOT_ACCEPTABLE).send(e.message ? e.message : e);
+      throw new NotAcceptableException('USER NOT FOUND');
     }
   }
 
@@ -37,7 +37,7 @@ export class AuthController {
       const user = await this.authService.verifyAndGetUser(jwt);
       res.status(HttpStatus.OK).send(user);
     } catch (e) {
-      res.status(HttpStatus.NOT_ACCEPTABLE).send('user not found');
+      throw new NotAcceptableException('USER NOT FOUND');
     }
   }
 
@@ -55,7 +55,7 @@ export class AuthController {
       const newUser = await this.usersService.addUser(ldapResult);
       res.status(HttpStatus.OK).send(newUser);
     } catch (e) {
-      res.status(HttpStatus.NOT_ACCEPTABLE).send('USER NOT FOUND');
+      throw new NotAcceptableException('USER NOT FOUND');
     }
   }
 
@@ -72,7 +72,7 @@ export class AuthController {
       const newUser = await this.usersService.registration(credentials);
       res.status(HttpStatus.OK).send(newUser);
     } catch (e) {
-      res.status(HttpStatus.NOT_ACCEPTABLE).send('USER NOT FOUND');
+      throw new NotAcceptableException('USER NOT FOUND');
     }
   }
 }

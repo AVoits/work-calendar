@@ -37,7 +37,9 @@
     </div>
     <div *ngIf="errorMessage" class="response-message error">
       <div><b>Ошибка:</b></div>
-      <div>{{errorMessage}}</div>
+      <div>{{errorMessage.statusCode}}</div>
+      <div>{{errorMessage.error}}</div>
+      <div>{{errorMessage.message}}</div>
     </div>
   </div>
 </div>
